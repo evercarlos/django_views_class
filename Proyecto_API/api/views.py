@@ -1,13 +1,13 @@
 from unicodedata import name
 from django.http.response import JsonResponse
 from django.utils.decorators import method_decorator
-from django.views import View
+from rest_framework.views import APIView
 from django.views.decorators.csrf import csrf_exempt
 import json
 from .models import Company
 
 # Create your views here.
-class CompanyView(View):
+class CompanyView(APIView):
     @method_decorator(csrf_exempt)
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
